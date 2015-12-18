@@ -93,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
+                Log.w(TAG, "Score: " + score);
                 score = (int) Math.log10(score);
                 Toast.makeText(getBaseContext(), "Score: " + score, Toast.LENGTH_LONG).show();
-                Log.w(TAG, "Score: " + score);
                 imageView.setImageBitmap(bitmap);
                 imageView.setRotation(90);
             } catch (Exception ex) {
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         int g2 = ((pixel >> 8) & 0xFF) - g;
         int r2 = ((pixel >> 16) & 0xFF) - r;
         long d = b2 * b2 + g2 * g2 + r2 * r2;
-        return d < 20000;
+        return d < 14000;
     }
 
 }
